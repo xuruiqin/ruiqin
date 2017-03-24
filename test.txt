@@ -1,3 +1,4 @@
 min 23 123456 girl
 bob 40 165963 boy
-jill 56 166982 girl
+jill 19 166982 girl
+terry 12 1716216 boy
