@@ -59,6 +59,8 @@ for index, (name, classifier) in enumerate(classifiers.items()):
     classifier.fit(X, y)
 
     y_pred = classifier.predict(X)
+#question: Why y_pred contains only 150 elements? But X data has 10,000 samples and 2 features.
+
     classif_rate = np.mean(y_pred.ravel() == y.ravel()) * 100
     print("classif_rate for %s : %f " % (name, classif_rate))
 
@@ -77,7 +79,7 @@ for index, (name, classifier) in enumerate(classifiers.items()):
         plt.xticks(())
         plt.yticks(())
         idx = (y_pred == k)
-#question: Why y_pred contains only 150 elements? But X data has 10,000 samples and 2 features.
+
         if idx.any():
             plt.scatter(X[idx, 0], X[idx, 1], marker='o', c='k')
 
