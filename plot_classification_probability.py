@@ -77,7 +77,7 @@ for index, (name, classifier) in enumerate(classifiers.items()):
         plt.xticks(())
         plt.yticks(())
         idx = (y_pred == k)
-#question: What does idx means? It's a list that contains 150 boolean type elements.why it's size =150?
+#question: Why y_pred contains 150 elements?
         if idx.any():
             plt.scatter(X[idx, 0], X[idx, 1], marker='o', c='k')
 
