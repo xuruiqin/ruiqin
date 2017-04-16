@@ -72,15 +72,15 @@ for index, (name, classifier) in enumerate(classifiers.items()):
             plt.ylabel(name)
         imshow_handle = plt.imshow(probas[:, k].reshape((100, 100)),
                                    extent=(3, 9, 1, 5), origin='lower')
-#question1: What is probas[:, k] , the probas is a list of list with 10,000*3 shape, and k is an int from 0 to 2.
+
 
         plt.xticks(())
         plt.yticks(())
         idx = (y_pred == k)
-#question2 : What does idx means? It's a list that contains 150 boolean type elements.why it's size =150?
+#question: What does idx means? It's a list that contains 150 boolean type elements.why it's size =150?
         if idx.any():
             plt.scatter(X[idx, 0], X[idx, 1], marker='o', c='k')
-#question3 ： when it plot scatters, I can not understand the arguments in plt.scatter
+
 ax = plt.axes([0.15, 0.04, 0.7, 0.05])
 plt.title("Probability")
 plt.colorbar(imshow_handle, cax=ax, orientation='horizontal')
