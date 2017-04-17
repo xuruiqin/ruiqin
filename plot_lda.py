@@ -32,11 +32,14 @@ def generate_data(n_samples, n_features):
     contain only noise.
     """
     X, y = make_blobs(n_samples=n_samples, n_features=1, centers=[[-2], [2]])
+# question :What the result of make_blobs? I can't understand why make_blobs takes centers = [[-2],[2]].
 
     # add non-discriminative features
     if n_features > 1:
         X = np.hstack([X, np.random.randn(n_samples, n_features - 1)])
     return X, y
+#  question :Why it creats such a dataset like this? The data contains n_samples samples and n_features features 
+# whose values are between 0 and 1.
 
 acc_clf1, acc_clf2 = [], []
 n_features_range = range(1, n_features_max + 1, step)
